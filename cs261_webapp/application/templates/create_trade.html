@@ -1,0 +1,127 @@
+{% extends "basic_template.html" %}
+
+{% block header %}
+<h1>Create New Trade</h1>
+{% endblock %}
+
+{% block main %}
+
+        {% if messages %}
+            <ul class="messages">
+                {% for message in messages %}
+                <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+
+        <form method='POST' action=''> {% csrf_token %}
+          {{ form.non_field_errors }}
+
+          <div class="formWrapper">
+            {{ form.date_of_trade.errors }}
+            <label for="date_of_trade">Date of Trade: <span style="color:red;">*</span></label>
+            {{form.date_of_trade}}
+          </div>
+
+          <div class="formWrapper">
+            {{ form.trade_id.errors }}
+            <label for="trade_id">Trade ID: <span style="color:red;">*</span></label>
+            {{form.trade_id}}
+            <p class="info-text"><i>Enter alphanumeric characters, without special characters</i></p>
+          </div>
+
+          <div class="formWrapper">
+            {{ form.product.errors }}
+            <label for="product">Product: <span style="color:red;">*</span></label>
+            {{form.product}}
+            <p class="info-text"><i>Enter alphanumeric characters, without special characters</i></p>
+          </div>
+
+          <div class="formWrapper">
+            {{ form.buying_party.errors }}
+            <label for="buying_party">Buying Party: <span style="color:red;">*</span></label>
+            {{form.buying_party}}
+            <p class="info-text"><i>Enter alphanumeric characters, without special characters</i></p>
+          </div>
+
+          <div class="formWrapper">
+            {{ form.selling_party.errors }}
+            <label for="selling_party">Selling Party: <span style="color:red;">*</span></label>
+            {{form.selling_party}}
+            <p class="info-text"><i>Enter alphanumeric characters, without special characters</i></p>
+          </div>
+
+
+
+          <div class="formWrapper">
+            {{ form.notional_amount.errors }}
+            <label for="notional_amount">Notional Amount: <span style="color:red;">*</span></label>
+            {{form.notional_amount}}
+          </div>
+
+          <div class="formWrapper">
+            {{ form.notional_currency.errors }}
+            <label for="notional_currency">Notional Currency: <span style="color:red;">*</span></label>
+            {{form.notional_currency}}
+          </div>
+
+          <div class="formWrapper">
+            {{ form.quantity.errors }}
+            <label for="quantity">Quantity: <span style="color:red;">*</span></label>
+            {{form.quantity}}
+          </div>
+
+          <div class="formWrapper">
+            {{ form.maturity_date.errors }}
+            <label for="maturity_date">Maturity Date: <span style="color:red;">*</span></label>
+            {{form.maturity_date}}
+          </div>
+
+          <div class="formWrapper">
+            {{ form.underlying_price.errors }}
+            <label for="underlying_price">Underlying Price:</label>
+            {{form.underlying_price}}
+          </div>
+
+          <div class="formWrapper">
+            {{ form.underlying_currency.errors }}
+            <label for="underlying_currency">Underlying Currency:  <span style="color:red;">*</span></label>
+            {{form.underlying_currency}}
+          </div>
+
+          <div class="formWrapper">
+            {{ form.strike_price.errors }}
+            <label for="strike_price">Strike Price:</label>
+            {{form.strike_price}}
+          </div>
+
+          
+
+          <br/>
+          <button id="submit" type="submit" class="btn btn-success btn-sm">Submit</button>
+        </form>
+
+        <!--
+        <p>text</p>
+        {% if messages %}
+            <ul class="messages">
+                {% for message in messages %}
+                <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+        <form method='POST' action=''> {% csrf_token %}
+        {% for field in form %}
+        <div class="fieldWrapper">
+            {{ field.errors }}
+
+            {{ field.label_tag }} {{ field }} <br>
+        </div>
+        {% endfor %}
+        <br/>
+        <button type="submit" class="btn btn-success btn-sm">Submit</button>
+        </form>
+        -->
+
+
+{% endblock %}

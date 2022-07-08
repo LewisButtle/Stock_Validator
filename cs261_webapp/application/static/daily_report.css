@@ -1,0 +1,119 @@
+
+
+/* Styles the generate report DIV */
+.reportDiv{
+  width:40%;
+  height:48vh;
+  margin-top:10vh;
+  margin-bottom:20vh;
+  margin-left:5%;
+  margin-right: 5%;
+  font-family: 'Raleway', sans-serif;
+  font-size:30px;
+  background-color:#EEECEC;
+  border-radius: 40px;
+  text-align: center;
+  box-shadow: 3px 2px 5px #888;
+  padding-top:17vh;
+
+}
+
+.reportDiv:hover{
+  opacity:0.7;
+  background-color: #F3F0F0;
+}
+
+.generate{
+  float:left;
+}
+
+.search{
+  float:right;
+}
+
+/* Styles the modal wrapper */
+.modalWrapper{
+  text-align: center;
+}
+
+
+/* Styles the modals */
+.generate_modal{
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 70vw;
+  height: 100%;
+  text-align: center;
+  margin-left:15vw;
+  margin-right:15vw;
+}
+
+
+
+
+/* The Close Button */
+.close {
+  /*color: #aaa;*/
+  color: black;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover, .close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Modal Content Box for generating reports*/
+.modal_content {
+  background-color: #F3F0F0;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+  height:60vh;
+  border-radius: 30px;
+  border-color:#F3F0F0;
+  box-shadow: 3px 2px 5px #888;
+  display: inline-block;
+}
+
+.modal_content h2{
+  margin: 8vh 0 5vh 0;
+  margin-bottom:20px;
+  text-align: center;
+  font-family: "Raleway", sans-serif;
+  font-size:22px;
+}
+
+.date label{
+  margin: 5vh 0 5vh 0;
+}
+
+.modal_content button{
+  margin: 0vh 0 5vh 0;
+}
+
+
+
+
+
+/* Modal content box for searching through reports */
+.search_modal{
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 70vw;
+  height: 100%;
+  text-align: center;
+  margin-left:15vw;
+  margin-right:15vw;
+
+}

@@ -1,0 +1,17 @@
+{% extends "basic_template.html" %}
+
+{% block header %}
+<h1>Search result</h1>
+{% endblock %}
+{% block content %}
+{% if list_of_trades %}
+<u1>
+    
+    {% for trade in list_of_trades %}
+        <li>{{trade.product}},{{trade.tradeID}},{{trade.underlyingCurrency}}</li>
+    {% endfor %}
+</u1>
+{% else %}
+    <h1> No trades </h1>
+{% endif %}
+{% endblock %}

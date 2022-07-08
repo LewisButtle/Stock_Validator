@@ -1,0 +1,30 @@
+/* Sets all hidden forms to display none */
+.lhs_options{
+  display: block;
+  float: left;
+  width:50%;
+  margin-bottom: 5vh;
+  text-align: left;
+}
+
+.rhs_options{
+  display: block;
+  float: right;
+  width:50%;
+  margin-bottom: 5vh;
+  text-align: right;
+}
+
+.hidden{
+  display:none;
+}
+
+
+
+.submit_wrapper{
+  text-align: center;
+}
+
+.submit_wrapper button{
+  width:20vw;
+}

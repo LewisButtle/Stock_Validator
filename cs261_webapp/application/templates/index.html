@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Trade Derivatives</title>
+
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'index.css' %}">
+    <link href="https://fonts.googleapis.com/css?family=Oswald|Raleway|Roboto&display=swap" rel="stylesheet">
+  </head>
+  <body>
+
+    <!-- This is the navigation bar at the top -->
+    <nav class="nav-main">
+      <!-- These objects will be floated to the RHS -->
+      <div class="objectsonlhs">
+        <p >Group 24</p>
+      </div>
+      <!-- <h1>DEUTSCHE BANK</h1> -->
+      <ul>
+        <li id="blackline"><a  href="{% url 'create_trade' %}">New</a></li>
+        <li id="blackline"><a  href="{% url 'edit_trade' %}">Edit </a></li>
+        <li><a  href="{% url 'daily_report' %}">Report</a></li>
+      </ul>
+
+    </nav>
+
+    <!-- This is the main page content -->
+    <main>
+
+    <div class="grid-container">
+      <div class="grid-item" onclick="location.href='{% url 'create_trade' %}';" style="cursor: pointer;">New Trade<p class="box_text">Create a new derivative trade</p></div>
+      <div class="grid-item" onclick="location.href='{% url 'edit_trade' %}';" style="cursor: pointer;">Edit Trade<p class="box_text">Edit any trade from the last 24 hours</p></div>
+      <div class="grid-item" onclick="location.href='{% url 'delete_trade' %}';" style="cursor: pointer;">Delete Trade<p class="box_text">Delete any trade from the last 24 hours</p></div>
+      <div class="grid-item" onclick="location.href='{% url 'daily_report' %}';" style="cursor: pointer;">Daily Reports<p class="box_text">Generate or search through daily reports</p></div>
+      <div class="grid-item" onclick="location.href='{% url 'admin:index' %}';" style="cursor: pointer;">Access Administrator<p class="box_text">Access the administrator page</p></div>
+      <div class="grid-item" onclick="location.href='{% url 'csv_upload' %}';" style="cursor: pointer;">Upload CSV<p class="box_text">Update the database with a CSV file</p></div>
+    </div>
+
+
+    </main>
+
+  </body>
+
+</html>

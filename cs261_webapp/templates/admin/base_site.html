@@ -1,0 +1,12 @@
+
+{% extends "admin/base.html" %}
+
+{% block title %}{{ title }} | {{ site_title|default:_('Site administration page') }}{% endblock %}
+
+<!-- {% block header %} <h1 id="titletext">Deutsche Bank</h1> {% endblock header %} -->
+
+{% block branding %}
+<h1 id="site-name"><a href="{% url 'admin:index' %}">{{ site_header|default:_('Site administration page') }}</a></h1>
+{% endblock %}
+
+{% block nav-global %}{% endblock %}

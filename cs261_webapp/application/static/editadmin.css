@@ -1,0 +1,147 @@
+/* Acts as a reset */
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, caption {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    background: transparent;
+}
+
+/* BACKGROUND IMAGE */
+
+body{
+  /*background-image: url("background3.jpg");*/
+  height: 100vh;
+}
+
+/* NAV BAR */
+
+
+/* h1{
+  font-family: 'Roboto', sans-serif;
+  font-size: 50px;
+  padding-top:3vh;
+  padding-left:3vw;
+} */
+
+h1{
+  padding-bottom:2vh;
+  font-size:20px;
+}
+
+.nav-main{
+  /*background-color: #f1f1f1;*/
+  background-image: linear-gradient(to bottom right, #DCDCDC, #E9E9E9);
+  color: black;
+  width:100vw;
+  position:fixed;
+  top:0;
+  height:18vh;
+  display:flex;
+  flex-wrap: wrap;
+  z-index:1000;
+  justify-content: space-between;
+  box-shadow: 6px 2px 5px #888;
+}
+
+.objectsonlhs{
+  display:flex;
+  flex-wrap: wrap;
+  text-align: none;
+}
+
+/* The group 24 text in the nav bar */
+.objectsonlhs p{
+  color:black;
+  font-family: 'Raleway', sans-serif;
+  font-size:30px;
+  font-weight: bold;
+  display:block;
+  padding: 0 10px;
+  line-height:10px;
+  padding-left: 30px;
+  padding-right: 30px;
+  margin: auto auto;
+
+}
+
+
+
+/*  When the group 24 text is hovered over on the navbar */
+.objectsonlhs p:hover, h1:hover{
+  text-shadow: 10px 10px 50px #111;
+}
+
+.nav-main ul{
+  width: fit-content;
+  display:flex;
+  flex-wrap: wrap;
+  margin: 0 0;
+  float:right;
+  padding-left: 30px;
+}
+
+.nav-main ul li{
+  float: left;
+  display:block;
+  padding: auto auto;
+  padding-right: 10px;
+    /* Removes the gap between links */
+  list-style:none;
+  margin: auto auto;
+  line-height: 30px;
+}
+
+.nav-main ul li a{
+  text-decoration: none;
+  text-transform: uppercase;
+  font-family: catamaran;
+  font-size: 20px;
+  color:black;
+  display:block;
+  height:100%;
+  padding: 0 20px;
+}
+
+#blackline{
+  border-right: 2px solid black;
+}
+
+main{
+  padding-top:18vh;
+
+}
+
+
+
+/* THIS OVERRIDES THE ADMIN CSS */
+
+/* Removes the header */
+#header{
+  display:none;
+}
+
+
+.breadcrumbs{
+  display:none;
+}
+
+
+/* Styles the filter column along the side */
+#changelist-filter{
+  z-index: 0;
+  height:100%;
+  overflow: scroll;
+}
+
+
+/* Styles the text at the top centre of the page, as title is overriden by django admin */
+#titletext{
+  font-family: 'Roboto', sans-serif;
+  font-size: 50px;
+  padding-top:3vh;
+  padding-left:3vw;
+  color: black;
+}

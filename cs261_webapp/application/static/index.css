@@ -1,0 +1,183 @@
+/* Acts as a reset */
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, caption {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    background: transparent;
+}
+
+/* BACKGROUND IMAGE */
+
+body{
+  /*background-image: url("background3.jpg");*/
+  background-image: linear-gradient(to bottom right, #DCDCDC, #E9E9E9);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+}
+
+/* NAV BAR */
+
+
+h1{
+  font-family: 'Roboto', sans-serif;
+  font-size: 50px;
+  /* Adjusts the title relative to the top of the page */
+  padding-top:5vh;
+  padding-left:3vw;
+}
+
+.nav-main{
+  /*background-color: #f1f1f1;*/
+  color: black;
+  width:100vw;
+  position:fixed;
+  top:0;
+  height:15vh;
+  display:flex;
+  flex-wrap: wrap;
+  z-index:1000;
+  justify-content: space-between;
+}
+
+.objectsonlhs{
+  display:flex;
+  flex-wrap: wrap;
+  text-align: none;
+}
+
+/* The group 24 text in the nav bar */
+.objectsonlhs p{
+  color:black;
+  font-family: 'Raleway', sans-serif;
+  font-size:30px;
+  font-weight: bold;
+  display:block;
+  padding: 0 10px;
+  line-height:10px;
+  padding-left: 30px;
+  padding-right: 30px;
+  margin: auto auto;
+
+}
+
+/*  When the group 24 text is hovered over on the navbar */
+.objectsonlhs p:hover, h1:hover{
+  text-shadow: 10px 10px 50px #111;
+}
+
+.nav-main ul{
+  width: fit-content;
+  display:flex;
+  flex-wrap: wrap;
+  margin: 0 0;
+  float:right;
+  padding-left: 30px;
+}
+
+.nav-main ul li{
+  float: left;
+  display:block;
+  padding: auto auto;
+  padding-right: 10px;
+    /* Removes the gap between links */
+  list-style:none;
+  margin: auto auto;
+  line-height: 30px;
+}
+
+.nav-main ul li a{
+  text-decoration: none;
+  text-transform: uppercase;
+  font-family: catamaran;
+  font-size: 20px;
+  color:black;
+  display:block;
+  height:100%;
+  padding: 0 20px;
+}
+
+#blackline{
+  border-right: 2px solid black;
+}
+
+/* MAIN CONTENT */
+
+main{padding-top: 15vh;}
+
+p{
+  color:black;
+}
+
+.grid-container{
+  margin-top:5vh;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  /*background-color: #2196F3;*/
+  padding: 10px;
+}
+
+.grid-item {
+  margin-left:5vw;
+  margin-right:5vw;
+  margin-top:5vh;
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  padding: 20px;
+  font-size: 40px;
+  text-align: center;
+  height:25vh;
+  font-family: "Oswald", sans-serif;
+  /*border: 1px solid rgb(127, 0, 0);
+  border: 1px solid rgba(0, 0, 0, .4);*/
+  box-shadow: 6px 2px 5px #888;
+}
+
+.grid-item:hover{
+  opacity: 0.8;
+  background-color: #e8e8e8;
+}
+
+.box_text{
+  padding-top:20px;
+  font-size: 23px;
+}
+
+#create{
+  background-color: #D7FCE3;
+  background-color: silver;
+}
+
+#edit{
+  background-color: #E1FFEB;
+  background-color: silver;
+}
+
+#delete{
+  background-color: #CEFFDE;
+  background-color: silver;
+}
+
+#report{
+  background-color: #CBFDDB;
+  background-color: silver;
+}
+
+#search{
+  background-color: #C0FCD4;
+  background-color: silver;
+}
+
+#csv{
+  /*background-color: #B6FCCD;*/
+  background-color: silver;
+}
+
+
+/* This gives consistent styles to all elements within the HTML pages */
+h2{
+  font-family: 'Oswald', sans-serif;
+}

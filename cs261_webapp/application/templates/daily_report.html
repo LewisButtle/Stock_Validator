@@ -1,0 +1,114 @@
+{% extends "edit_inherited_template.html" %}
+
+{% block header %}
+  <h1>Daily Report</h1>
+{% endblock %}
+
+{% block main %}
+{% if messages %}
+            <ul class="messages">
+                {% for message in messages %}
+                <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+                {% endfor %}
+            </ul>
+{% endif %}
+  <!-- THIS IS THE SEARCHABLE DAILY REPORT CODE
+
+  <h2 id="daily_h2">Choose an option to search reports by:</h2>
+
+  <form method='POST' action=''> {% csrf_token %}
+    {{ form.non_field_errors }}
+
+    <button type="button" name="button" onclick="date_onclick()">button</button>
+
+
+    <div class="">
+      {{ form.option.errors }}
+      <label for="option">Date <span style="color:red;">*</span></label>
+      {{form.option}}
+    </div>
+
+    <div class="date_hidden">
+      {{ form.date_of_trade.errors }}
+      <label for="date_of_trade">Date of Trade: <span style="color:red;">*</span></label>
+      {{form.date_of_trade}}
+    </div>
+
+  </form>
+
+  -->
+
+  <!-- This is a modal to display the generate report page -->
+  <div class="modalWrapper">
+    <div class="generate_modal">
+      <div class="modal_content">
+        <span class="close"  onclick="closeModal()">&times;</span>
+
+        <h2 id="daily_h2">Enter the date to generate reports for:</h2>
+
+        <form method='POST' action=''> {% csrf_token %}
+          <!--{{ form1.non_field_errors }}-->
+
+          <!-- <div class="">
+            {{ form.option.errors }}
+            <label for="option">Date <span style="color:red;">*</span></label>
+            {{form.option}}
+          </div> -->
+
+          <div class="date">
+            {{ form.date_of_trade.errors }}
+            <label for="date_of_trade">Date of Trade: </label>
+            {{form1.date_of_trade}}
+          </div>
+
+          <br/>
+          <button id="submit" type="submit" class="btn btn-success btn-sm" name="generate">Submit</button>
+
+        </form>
+      </div>
+    </div>
+  </div>
+
+
+
+  <div class="modalWrapper">
+    <!-- This is a modal to display the searching reports UI -->
+    <div class="search_modal">
+      <div class="modal_content">
+        <span class="close"  onclick="closeModal()">&times;</span>
+
+        <h2 id="daily_h2">Search for reports</h2>
+
+        <form action="" method="post">{% csrf_token %}
+          <!-- The radio button for selecting the date to search for -->
+          <div class="date_tick">
+            {{ form2.date_of_trade.errors }}
+            <label for="date_of_trade">Date of Trade: </label>
+            {{form2.date_of_trade}}
+          </div>
+
+          <br/>
+          <button id="submit" type="submit" class="btn btn-success btn-sm" name="search">Submit</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+
+
+  <div class="main_content">
+    <!-- Upon clicking, opens up the generate new report modal -->
+    <div class="reportDiv generate" style="cursor: pointer;" onclick="generateModal()">
+      <h2>Generate New <br>Report</h2>
+    </div>
+
+    <!-- Upon clicking opens up the search report modal -->
+    <div class="reportDiv search" style="cursor: pointer;" onclick="searchModal()">
+      <h2>Search Through <br>Reports</h2>
+    </div>
+  </div>
+
+
+
+
+{% endblock %}

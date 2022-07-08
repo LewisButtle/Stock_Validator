@@ -1,0 +1,199 @@
+{% extends "basic_template.html" %}
+
+{% block header %}
+  <h1>Edit Trade</h1>
+  {% endblock %}
+
+{% block main %}
+
+<h2>Select an attribute to search by:</h2>
+<br>
+{% if messages %}
+            <ul class="messages">
+                {% for message in messages %}
+                <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+<form method='POST' action='' id="form"> {% csrf_token %}
+
+  <div class="options">
+    <div class="lhs_options">
+      <div class="option" id="date_option">
+        <!-- {{ form.date_option.errors}} -->
+        <label for="date_option">Date:</label>
+        {{ form.date_option}}
+      </div>
+
+      <div class="option" id="trade_id_option">
+        <label for="trade_id">Trade ID:</label>
+        {{ form.trade_id_option}}
+      </div>
+
+
+      <div class="option" id="product_option">
+        <label for="product">Product:</label>
+        {{ form.product_option}}
+      </div>
+
+      <div class="option" id="buying_party_option">
+        <label for="buying_party">Buying Party:</label>
+        {{ form.buying_party_option}}
+      </div>
+    </div>
+
+    <div class="rhs_options">
+      <div class="option" id="selling_party_option">
+        {{ form.selling_party_option}}
+        <label for="selling_party">Selling Party:</label>
+      </div>
+
+      <div class="option" id="underlying_currency_option">
+        {{ form.underlying_currency_option}}
+        <label for="underlying_currency">Underlying Currency:</label>
+      </div>
+
+      <div class="option" id="quantity_option">
+          {{ form.quantity_option}}
+        <label for="quantity">Quantity:</label>
+      </div>
+
+      <div class="option" id="maturity_date_option">
+        {{ form.maturity_date_option}}
+        <label for="maturity_date">Maturity Date:</label>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="hidden_content">
+
+    {% if date_clicked is True %}
+    <div class="formWrapper" id="date">
+      {{ form.date_of_trade.errors }}
+      <label for="date_of_trade">Date of Trade: <span style="color:red;">*</span></label>
+      {{form.date_of_trade}}
+    </div>
+    {% else %}
+    <div class="hidden formWrapper" id="date">
+      {{ form.date_of_trade.errors }}
+      <label for="date_of_trade">Date of Trade: <span style="color:red;">*</span></label>
+      {{form.date_of_trade}}
+    </div>
+    {% endif %}
+
+    {% if trade_id_clicked is True %}
+    <div class="formWrapper" id="trade_id">
+      {{ form.trade_id.errors }}
+      <label for="trade_id">Enter the Trade ID<span style="color:red;">*</span></label>
+      {{ form.trade_id}}
+    </div>
+    {% else %}
+    <div class="hidden formWrapper" id="trade_id">
+      {{ form.trade_id.errors }}
+      <label for="trade_id">Enter the Trade ID<span style="color:red;">*</span></label>
+      {{ form.trade_id}}
+    </div>
+    {% endif %}
+
+    {% if product_clicked is True %}
+    <div class="formWrapper" id="product">
+      {{ form.products.errors }}
+      <label for="product">Enter the Product<span style="color:red;">*</span></label>
+      {{ form.product}}
+    </div>
+    {% else %}
+    <div class="hidden formWrapper" id="product">
+      {{ form.products.errors }}
+      <label for="product">Enter the Product<span style="color:red;">*</span></label>
+      {{ form.product}}
+    </div>
+    {% endif %}
+
+    {% if buying_party_clicked is True %}
+    <div class="formWrapper" id="buying_party">
+      {{ form.buying_party.errors }}
+      <label for="buying_party">Enter the Buying Party<span style="color:red;">*</span></label>
+      {{ form.buying_party}}
+    </div>
+    {% else %}
+    <div class="hidden formWrapper" id="buying_party">
+      {{ form.buying_party.errors }}
+      <label for="buying_party">Enter the Buying Party<span style="color:red;">*</span></label>
+      {{ form.buying_party}}
+    </div>
+    {% endif %}
+
+    {% if selling_party_clicked is True %}
+    <div class="formWrapper" id="selling_party">
+      {{ form.selling_party.errors }}
+      <label for="selling_party">Enter the Selling Party<span style="color:red;">*</span></label>
+      {{ form.selling_party}}
+    </div>
+    {% else %}
+    <div class="hidden formWrapper" id="selling_party">
+      {{ form.selling_party.errors }}
+      <label for="selling_party">Enter the Selling Party<span style="color:red;">*</span></label>
+      {{ form.selling_party}}
+    </div>
+    {% endif %}
+
+    {% if underlying_currency_clicked is True %}
+    <div class="formWrapper" id="underlying_currency">
+      {{ form.underlying_currency.errors }}
+      <label for="underlying_currency">Enter the Underlying Currency<span style="color:red;">*</span></label>
+      {{ form.underlying_currency}}
+    </div>
+    {% else %}
+    <div class="hidden formWrapper" id="underlying_currency">
+      {{ form.underlying_currency.errors }}
+      <label for="underlying_currency">Enter the Underlying Currency<span style="color:red;">*</span></label>
+      {{ form.underlying_currency}}
+    </div>
+    {% endif %}
+
+    {% if quantity_clicked is True %}
+    <div class="formWrapper" id="quantity">
+      {{ form.quantity.errors }}
+      <label for="quantity">Enter the Quantity<span style="color:red;">*</span></label>
+      {{ form.quantity}}
+    </div>
+    {% else %}
+    <div class="hidden formWrapper" id="quantity">
+      {{ form.quantity.errors }}
+      <label for="quantity">Enter the Quantity<span style="color:red;">*</span></label>
+      {{ form.quantity}}
+    </div>
+    {% endif %}
+
+    {% if maturity_date_clicked is True %}
+    <div class="formWrapper" id="maturity_date">
+      {{ form.maturity_date.errors }}
+      <label for="maturity_date">Enter the Maturity Date<span style="color:red;">*</span></label>
+      {{ form.maturity_date}}
+    </div>
+    {% else %}
+    <div class="hidden formWrapper" id="maturity_date">
+      {{ form.maturity_date.errors }}
+      <label for="maturity_date">Enter the Maturity Date<span style="color:red;">*</span></label>
+      {{ form.maturity_date}}
+    </div>
+    {% endif %}
+
+  </div>
+
+  <br><br>
+
+  <br/>
+  <div class="submit_wrapper">
+    <button id="submit" onclick="clear()" type="submit" class="btn btn-success btn-sm" name="generate">Submit</button>
+  </div>
+
+
+
+
+</form>
+
+
+
+{% endblock %}

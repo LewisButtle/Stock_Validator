@@ -1,0 +1,20 @@
+{% extends "basic_template.html" %}
+
+{% block main %}
+
+	{% if messages %}
+		{% for message in messages %}
+			<div>
+				<strong>{{message|safe}}</strong>
+			</div>
+		{% endfor %}
+	{% else %}
+		<form method="POST" enctype="multipart/form-data">
+			{% csrf_token %}
+			<label>Upload CSV file</label><br/>
+			<input type="file" name="file"><br/>
+			<br/>
+			<button type="submit">Upload</button>
+		</form>
+	{% endif %}
+{% endblock %}
